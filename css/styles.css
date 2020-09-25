@@ -8,3 +8,38 @@ body {
     display: block;
     margin-bottom: 0.25em;
 }
+
+.check {
+    padding-left: 1.2em;
+}
+
+.check__input {
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.check__box {
+    position: absolute;
+    margin-top: 0.2em;
+    margin-left: -1em;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 0.05em;
+    background-color: tan;
+    box-shadow: 0 0 0 0.1em red;
+
+}
+
+.check__input:checked + .check__box {
+
+}
+
+.check__input:disabled + .check__box {
+
+}
+
+.check__input:checked:disabled + .check__box {
+
+}
