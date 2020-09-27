@@ -1,45 +1,67 @@
+:root {
+	--main-color: #2196f3;
+	--hover-main-color: #188ce8;
+	--accent-color: orangered;
+	--disabled-color: #afb1b8;
+}
+
+/* 
+unchecked
+checked
+unchecked + focus
+checked + focus
+unchecked + disabled
+checked + disabled
+ */
+
 body {
-    margin: 0;
-    padding: 50px;
-    font-family: sans-serif;
+	margin: 0;
+	padding: 50px;
+	font-family: sans-serif;
 }
 
 .option {
-    display: block;
-    margin-bottom: 0.25em;
+	display: block;
+	margin-bottom: 0.25em;
 }
 
 .check {
-    padding-left: 1.2em;
+	padding-left: 1.2em;
 }
 
 .check__input {
-    position: absolute;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
 }
 
 .check__box {
-    position: absolute;
-    margin-top: 0.2em;
-    margin-left: -1em;
-    width: 0.6em;
-    height: 0.6em;
-    border-radius: 0.05em;
-    background-color: tan;
-    box-shadow: 0 0 0 0.1em red;
-
+	position: absolute;
+	margin-top: 0.2em;
+	margin-left: -1em;
+	width: 0.6em;
+	height: 0.6em;
+	border-radius: 0.05em;
+	background-color: white;
+	box-shadow: 0 0 0 0.1em var(--main-color);
 }
 
 .check__input:checked + .check__box {
+	background-color: var(--main-color);
+	background-image: url(/images/v1.svg);
+	background-size: cover;
+}
 
+.check__input:focus + .check__box {
+	box-shadow: 0 0 0 0.1em var(--main-color), 0 0 0 0.2em var(--accent-color);
 }
 
 .check__input:disabled + .check__box {
-
+	box-shadow: 0 0 0 0.1em var(--disabled-color);
 }
 
 .check__input:checked:disabled + .check__box {
-
+	background-color: var(--disabled-color);
 }
